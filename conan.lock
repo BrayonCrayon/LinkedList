@@ -1,0 +1,24 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "options": "gtest:build_gmock=True\ngtest:hide_symbols=False\ngtest:no_main=False\ngtest:shared=False",
+    "requires": [
+     "1"
+    ],
+    "path": "conanfile.txt",
+    "context": "host"
+   },
+   "1": {
+    "ref": "gtest/1.10.0",
+    "options": "build_gmock=True\nhide_symbols=False\nno_main=False\nshared=False",
+    "package_id": "3f7b6d42d6c995a23d193db1f844ed23ae943226",
+    "prev": "0",
+    "context": "host"
+   }
+  },
+  "revisions_enabled": false
+ },
+ "version": "0.4",
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=Visual Studio\ncompiler.runtime=MD\ncompiler.version=15\nos=Windows\nos_build=Windows\n[options]\n[build_requires]\n[env]\n"
+}
