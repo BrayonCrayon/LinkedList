@@ -1,8 +1,8 @@
 [includedirs]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/include
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/include
 
 [libdirs]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/lib
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/lib
 
 [bindirs]
 
@@ -11,7 +11,7 @@ C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b877
 
 
 [builddirs]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/
 
 [libs]
 gtest_maind
@@ -23,8 +23,7 @@ gtestd
 
 
 [defines]
-GTEST_LANG_CXX11=1
-GTEST_HAS_TR1_TUPLE=0
+
 
 [cppflags]
 
@@ -52,10 +51,10 @@ GTEST_HAS_TR1_TUPLE=0
 
 
 [includedirs_gtest]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/include
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/include
 
 [libdirs_gtest]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/lib
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/lib
 
 [bindirs_gtest]
 
@@ -64,7 +63,7 @@ C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b877
 
 
 [builddirs_gtest]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/
 
 [libs_gtest]
 gtest_maind
@@ -76,8 +75,7 @@ gtestd
 
 
 [defines_gtest]
-GTEST_LANG_CXX11=1
-GTEST_HAS_TR1_TUPLE=0
+
 
 [cppflags_gtest]
 
@@ -104,7 +102,7 @@ GTEST_HAS_TR1_TUPLE=0
 
 
 [rootpath_gtest]
-C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd
+C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6
 
 [name_gtest]
 gtest

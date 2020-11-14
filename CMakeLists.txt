@@ -25,7 +25,7 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 conan_cmake_run(CONANFILE conanfile.txt BASIC_SETUP BUILD missing)
 
-add_library(LinkedListLib ${HEADER_FILES} ${SOURCE_FILES}/LinkedList.cpp)
+add_library(LinkedListLib ${HEADER_FILES} ${SOURCE_FILES}/LinkedList.cpp ${SOURCE_FILES}/Node.cpp)
 target_include_directories(LinkedListLib PUBLIC ${INCLUDE_PATH}/linked_list)
 
 add_executable(LinkedList ${SOURCES})

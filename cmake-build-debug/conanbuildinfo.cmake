@@ -38,25 +38,23 @@ endmacro()
 #################
 ###  GTEST
 #################
-set(CONAN_GTEST_ROOT "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd")
-set(CONAN_INCLUDE_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/include")
-set(CONAN_LIB_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/lib")
+set(CONAN_GTEST_ROOT "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6")
+set(CONAN_INCLUDE_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/include")
+set(CONAN_LIB_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/lib")
 set(CONAN_BIN_DIRS_GTEST )
 set(CONAN_RES_DIRS_GTEST )
 set(CONAN_SRC_DIRS_GTEST )
-set(CONAN_BUILD_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/")
+set(CONAN_BUILD_DIRS_GTEST "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/")
 set(CONAN_FRAMEWORK_DIRS_GTEST )
 set(CONAN_LIBS_GTEST gtest_maind gmock_maind gmockd gtestd)
 set(CONAN_PKG_LIBS_GTEST gtest_maind gmock_maind gmockd gtestd)
 set(CONAN_SYSTEM_LIBS_GTEST )
 set(CONAN_FRAMEWORKS_GTEST )
 set(CONAN_FRAMEWORKS_FOUND_GTEST "")  # Will be filled later
-set(CONAN_DEFINES_GTEST "-DGTEST_LANG_CXX11=1"
-			"-DGTEST_HAS_TR1_TUPLE=0")
+set(CONAN_DEFINES_GTEST )
 set(CONAN_BUILD_MODULES_PATHS_GTEST )
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_GTEST "GTEST_LANG_CXX11=1"
-			"GTEST_HAS_TR1_TUPLE=0")
+set(CONAN_COMPILE_DEFINITIONS_GTEST )
 
 set(CONAN_C_FLAGS_GTEST "")
 set(CONAN_CXX_FLAGS_GTEST "")
@@ -80,12 +78,12 @@ set(CONAN_LIBS_GTEST ${CONAN_PKG_LIBS_GTEST} ${CONAN_SYSTEM_LIBS_GTEST} ${CONAN_
 set(CONAN_PACKAGE_NAME None)
 set(CONAN_PACKAGE_VERSION None)
 
-set(CONAN_SETTINGS_ARCH "x86")
+set(CONAN_SETTINGS_ARCH "x86_64")
 set(CONAN_SETTINGS_ARCH_BUILD "x86_64")
 set(CONAN_SETTINGS_BUILD_TYPE "Debug")
-set(CONAN_SETTINGS_COMPILER "Visual Studio")
-set(CONAN_SETTINGS_COMPILER_RUNTIME "MDd")
-set(CONAN_SETTINGS_COMPILER_VERSION "15")
+set(CONAN_SETTINGS_COMPILER "gcc")
+set(CONAN_SETTINGS_COMPILER_LIBCXX "libstdc++11")
+set(CONAN_SETTINGS_COMPILER_VERSION "8")
 set(CONAN_SETTINGS_OS "Windows")
 set(CONAN_SETTINGS_OS_BUILD "Windows")
 
@@ -97,8 +95,8 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/lib" ${CONAN_LIB_DIRS})
+set(CONAN_INCLUDE_DIRS "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS  ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS  ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
@@ -107,10 +105,9 @@ set(CONAN_PKG_LIBS gtest_maind gmock_maind gmockd gtestd ${CONAN_PKG_LIBS})
 set(CONAN_SYSTEM_LIBS  ${CONAN_SYSTEM_LIBS})
 set(CONAN_FRAMEWORKS  ${CONAN_FRAMEWORKS})
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
-set(CONAN_DEFINES "-DGTEST_LANG_CXX11=1"
-			"-DGTEST_HAS_TR1_TUPLE=0" ${CONAN_DEFINES})
+set(CONAN_DEFINES  ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/85aa52ce07e790a37fe4d01b8773089457c190dd/" ${CONAN_CMAKE_MODULE_PATH})
+set(CONAN_CMAKE_MODULE_PATH "C:/Users/Trojan/.conan/data/gtest/1.10.0/_/_/package/04d88e894cbe6cf2f491043e59fd3845d54feef6/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
