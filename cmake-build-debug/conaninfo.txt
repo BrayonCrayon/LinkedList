@@ -1,0 +1,39 @@
+[settings]
+    arch=x86_64
+    build_type=Debug
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=8
+    os=Windows
+
+[requires]
+    gtest/1.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Debug
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=8
+    os=Windows
+    os_build=Windows
+
+[full_requires]
+    gtest/1.10.0:04d88e894cbe6cf2f491043e59fd3845d54feef6
+
+[full_options]
+    gtest:build_gmock=True
+    gtest:debug_postfix=d
+    gtest:hide_symbols=False
+    gtest:no_main=False
+    gtest:shared=False
+
+[recipe_hash]
+
+
+[env]
+
