@@ -44,10 +44,9 @@ LinkedList<T>::LinkedList(initializer_list<T> args) : size_(args.size()) {
     }
 
     auto it = args.begin();
-    this->node_ = make_shared<Node<T>>(*it);
+    this->node_ = make_shared<Node<T>>(*it++);
     node_ptr currentNode = this->node_;
-    for (size_t i = 1; i < this->size_; ++i) {
-        ++it;
+    for (size_t i = 1; i < this->size_; ++i, ++it) {
         currentNode->setNext(make_shared<Node<T>>(currentNode, *it));
         currentNode = currentNode->next();
     }
