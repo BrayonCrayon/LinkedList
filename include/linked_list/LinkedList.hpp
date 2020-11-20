@@ -37,7 +37,11 @@ public:
 
     [[nodiscard]] node_ptr head() const;
 
-    void insert(T value, int index = -1);
+    void insert(T value, size_t index);
+
+    void insert(T value);
+
+    void erase(size_t index);
 
     [[nodiscard]] node_ptr findLast() const;
 

@@ -105,6 +105,10 @@ typename LinkedList<T>::node_ptr LinkedList<T>::head() const {
 
 template<typename T>
 typename LinkedList<T>::node_ptr LinkedList<T>::findAt(int index) const {
+    if (index >= this->size_ || index < 0) {
+        throw range_error("Index is out of range: " + to_string(index));
+    }
+
     auto currentNode = this->node_;
     for (int i = 0; i < index; ++i) {
         currentNode = currentNode->next();
@@ -125,17 +129,10 @@ typename LinkedList<T>::node_ptr LinkedList<T>::findLast() const {
 }
 
 template<typename T>
-void LinkedList<T>::insert(T value, int index) {
+void LinkedList<T>::insert(T value, size_t index) {
 
     if (this->node_ == nullptr) {
         this->node_ = make_shared<Node<T>>(value);
-        ++this->size_;
-        return;
-    }
-
-    if (index < 0) {
-        node_ptr lastNode = this->findLast();
-        lastNode->setNext(make_shared<Node<T>>(lastNode, value));
     }
     else {
         node_ptr foundNode = this->findAt(index);
@@ -146,4 +143,38 @@ void LinkedList<T>::insert(T value, int index) {
     }
 
     ++this->size_;
+}
+
+template<typename T>
+void LinkedList<T>::insert(T value) {
+    if (this->node_ == nullptr) {
+        this->node_ = make_shared<Node<T>>(value);
+    }
+    else {
+        node_ptr lastNode = this->findLast();
+        lastNode->setNext(make_shared<Node<T>>(lastNode, value));
+    }
+    ++this->size_;
+}
+
+template<typename T>
+void LinkedList<T>::erase(size_t index) {
+    if (index >= this->size_ || index < 0) {
+        throw range_error("Index is out of range: " + to_string(index));
+    }
+
+    node_ptr currentNode = this->node_;
+    for (int i = 0; i < index; ++i) {
+        currentNode = currentNode->next();
+    }
+
+    node_ptr nextNode = currentNode->next();
+    node_ptr prevNode = currentNode->prev();
+
+    nextNode->setPrev(prevNode);
+    prevNode->setNext(nextNode);
+    currentNode->setPrev(nullptr);
+    currentNode->setNext(nullptr);
+    currentNode.reset();
+    --this->size_;
 }

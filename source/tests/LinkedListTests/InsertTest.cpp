@@ -55,3 +55,15 @@ TEST(InsertTest, InsertAtSpecificSpotInList) {
         currentNode = currentNode->next();
     }
 }
+
+TEST(InsertTest, CannotInsertAtIndexThatDoesntExist) {
+    EXPECT_THROW({
+         LinkedList<int> list({1, 2, 3, 4});
+         list.insert(5, 4);
+    }, range_error);
+
+    EXPECT_THROW({
+         LinkedList<int> list({1, 2, 3, 4});
+         list.insert(5, -2);
+    }, range_error);
+}
