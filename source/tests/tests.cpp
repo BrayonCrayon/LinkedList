@@ -18,5 +18,6 @@
 #include "LinkedListTests/LongDoubleTest.cpp"
 #include "LinkedListTests/InsertTest.cpp"
 #include "LinkedListTests/EraseTest.cpp"
+#include "LinkedListTests/OperatorTest.cpp"
 
 #endif //LINKEDLIST_TESTS_CPP
