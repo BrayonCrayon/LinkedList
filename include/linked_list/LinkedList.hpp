@@ -27,11 +27,25 @@ public:
 
     LinkedList(std::initializer_list<T>);
 
+    LinkedList(const LinkedList<T> &);
+
+    LinkedList(LinkedList<T>&&) noexcept;
+
     ~LinkedList();
 
     [[nodiscard]] size_t size() const;
 
-    [[nodiscard]] node_ptr &head();
+    [[nodiscard]] node_ptr head() const;
+
+    void insert(T value, size_t index);
+
+    void insert(T value);
+
+    void erase(size_t index);
+
+    [[nodiscard]] node_ptr findLast() const;
+
+    [[nodiscard]] node_ptr findAt(int index) const;
 
 };
 
