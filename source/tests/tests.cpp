@@ -5,6 +5,9 @@
 #ifndef LINKEDLIST_TESTS_CPP
 #define LINKEDLIST_TESTS_CPP
 
+/*
+ * LinkedList Tests
+ */
 #include "LinkedListTests/ConstructorTest.cpp"
 #include "LinkedListTests/StringTest.cpp"
 #include "LinkedListTests/DoubleTest.cpp"
@@ -13,5 +16,6 @@
 #include "LinkedListTests/LongLongTest.cpp"
 #include "LinkedListTests/FloatTest.cpp"
 #include "LinkedListTests/LongDoubleTest.cpp"
+#include "LinkedListTests/InsertTest.cpp"
 
 #endif //LINKEDLIST_TESTS_CPP
