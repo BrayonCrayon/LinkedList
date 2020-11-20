@@ -104,12 +104,12 @@ typename LinkedList<T>::node_ptr LinkedList<T>::head() const {
 }
 
 template<typename T>
-typename LinkedList<T>::node_ptr LinkedList<T>::findAt(int index) const {
+typename LinkedList<T>::node_ptr LinkedList<T>::findAt(int index) {
     if (index >= this->size_ || index < 0) {
         throw range_error("Index is out of range: " + to_string(index));
     }
 
-    auto currentNode = this->node_;
+    node_ptr currentNode = this->node_;
     for (int i = 0; i < index; ++i) {
         currentNode = currentNode->next();
     }
@@ -117,8 +117,8 @@ typename LinkedList<T>::node_ptr LinkedList<T>::findAt(int index) const {
 }
 
 template<typename T>
-typename LinkedList<T>::node_ptr LinkedList<T>::findLast() const {
-    auto currentNode = this->node_;
+typename LinkedList<T>::node_ptr LinkedList<T>::findLast() {
+    node_ptr currentNode = this->node_;
     for (int i = 0; i < this->size_; ++i) {
         if (currentNode->next() == nullptr) {
             break;
@@ -177,4 +177,15 @@ void LinkedList<T>::erase(size_t index) {
     currentNode->setNext(nullptr);
     currentNode.reset();
     --this->size_;
+}
+
+/*
+ ***************************************
+ **** Overloaded Operators          ****
+ ***************************************
+ */
+
+template<typename T>
+typename LinkedList<T>::node_ptr LinkedList<T>::operator[](int index) {
+    return this->findAt(index);
 }

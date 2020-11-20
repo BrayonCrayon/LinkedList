@@ -43,9 +43,11 @@ public:
 
     void erase(size_t index);
 
-    [[nodiscard]] node_ptr findLast() const;
+    [[nodiscard]] node_ptr findLast();
 
-    [[nodiscard]] node_ptr findAt(int index) const;
+    [[nodiscard]] node_ptr findAt(int index);
+
+    [[nodiscard]] node_ptr operator[](int index);
 
 };
 
