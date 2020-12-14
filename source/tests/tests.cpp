@@ -19,5 +19,6 @@
 #include "LinkedListTests/InsertTest.cpp"
 #include "LinkedListTests/EraseTest.cpp"
 #include "LinkedListTests/OperatorTest.cpp"
+#include "LinkedListTests/IteratorTest.cpp"
 
 #endif //LINKEDLIST_TESTS_CPP

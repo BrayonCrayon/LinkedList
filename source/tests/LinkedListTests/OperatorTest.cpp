@@ -14,7 +14,7 @@ TEST(OperatorTest, SubscriptOperatorRetrievesNode) {
     ASSERT_EQ(3, requestedNode->value());
 }
 
-TEST(OperatorTest, SubscriptOperatorCannotRevieveNodeThatDoesntExist) {
+TEST(OperatorTest, SubscriptOperatorCannotRetrieveNodeThatDoesntExist) {
     EXPECT_THROW({
         LinkedList<int> list({1, 2, 3, 4, 5});
         auto requestedNode = list[5];

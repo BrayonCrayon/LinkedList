@@ -19,7 +19,7 @@ TEST(CharTest, TestOneArgConstructor) {
     ASSERT_NE(nullptr, list.head().get());
     ASSERT_EQ(char{}, list.head()->value());
     ASSERT_EQ(nullptr, list.head()->prev());
-    ASSERT_EQ(nullptr, list.head()->next());
+    ASSERT_EQ(nullptr, list.head()->next()->value_ptr());
 
     LinkedList<char> list2(4);
     ASSERT_EQ(4, list2.size());
@@ -44,7 +44,7 @@ TEST(CharTest, TestTwoArgConstructor) {
     ASSERT_NE(nullptr, list.head().get());
     ASSERT_EQ('a', list.head()->value());
     ASSERT_EQ(nullptr, list.head()->prev());
-    ASSERT_EQ(nullptr, list.head()->next());
+    ASSERT_EQ(nullptr, list.head()->next()->value_ptr());
 
     LinkedList<char> list2(0, 'a');
     ASSERT_EQ(0, list2.size());

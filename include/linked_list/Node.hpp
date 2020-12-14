@@ -13,7 +13,7 @@ public:
     using node_ptr = std::shared_ptr<Node<T>>;
 
 private:
-    T value_{};
+    std::unique_ptr<T> value_;
     node_ptr next_;
     node_ptr prev_;
 public:
@@ -29,6 +29,7 @@ public:
     explicit Node(node_ptr &previous, T value);
 
     T value() const;
+    std::unique_ptr<T>& value_ptr();
 
     node_ptr &next();
 

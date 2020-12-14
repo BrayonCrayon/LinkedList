@@ -18,7 +18,7 @@ TEST(DoubleTest, TestOneArgConstructor) {
     ASSERT_NE(nullptr, list.head().get());
     ASSERT_DOUBLE_EQ(0.0, list.head()->value());
     ASSERT_EQ(nullptr, list.head()->prev());
-    ASSERT_EQ(nullptr, list.head()->next());
+    ASSERT_EQ(nullptr, list.head()->next()->value_ptr());
 
     LinkedList<double> list2(4);
     ASSERT_EQ(4, list2.size());
@@ -43,7 +43,7 @@ TEST(DoubleTest, TestTwoArgConstructor) {
     ASSERT_NE(nullptr, list.head().get());
     ASSERT_DOUBLE_EQ(0.50000000000000001, list.head()->value());
     ASSERT_EQ(nullptr, list.head()->prev());
-    ASSERT_EQ(nullptr, list.head()->next());
+    ASSERT_EQ(nullptr, list.head()->next()->value_ptr());
 
     LinkedList<double> list2(0, 0.50000000000000001);
     ASSERT_EQ(0, list2.size());

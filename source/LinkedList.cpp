@@ -22,12 +22,14 @@ LinkedList<T>::LinkedList(size_t size) : size_(size) {
         return;
     }
 
-    this->node_ = make_shared<Node<T>>();
+    this->node_ = make_shared<Node<T>>(T());
     node_ptr currentNode = this->node_;
     for (size_t i = 1; i < this->size_; ++i) {
         currentNode->setNext(make_shared<Node<T>>(currentNode));
         currentNode = currentNode->next();
     }
+    currentNode->setNext(make_shared<Node<T>>());
+    currentNode->next()->setPrev(currentNode);
 }
 
 template<typename T>
@@ -42,6 +44,8 @@ LinkedList<T>::LinkedList(size_t size, T value) : size_(size) {
         currentNode->setNext(make_shared<Node<T>>(currentNode, value));
         currentNode = currentNode->next();
     }
+    currentNode->setNext(make_shared<Node<T>>());
+    currentNode->next()->setPrev(currentNode);
 }
 
 template<typename T>
@@ -57,6 +61,8 @@ LinkedList<T>::LinkedList(initializer_list<T> args) : size_(args.size()) {
         currentNode->setNext(make_shared<Node<T>>(currentNode, *it));
         currentNode = currentNode->next();
     }
+    currentNode->setNext(make_shared<Node<T>>());
+    currentNode->next()->setPrev(currentNode);
 }
 
 template<typename T>
@@ -74,6 +80,8 @@ LinkedList<T>::LinkedList(const LinkedList<T> & listToCopy) : size_(listToCopy.s
         currentNode->setNext(make_shared<Node<T>>(currentNode, currentNodeToCopy->value()));
         currentNode = currentNode->next();
     }
+    currentNode->setNext(make_shared<Node<T>>());
+    currentNode->next()->setPrev(currentNode);
 }
 
 template<typename T>
@@ -120,7 +128,7 @@ template<typename T>
 typename LinkedList<T>::node_ptr LinkedList<T>::findLast() {
     node_ptr currentNode = this->node_;
     for (int i = 0; i < this->size_; ++i) {
-        if (currentNode->next() == nullptr) {
+        if (currentNode->next()->value_ptr() == nullptr) {
             break;
         }
         currentNode = currentNode->next();
@@ -149,6 +157,8 @@ template<typename T>
 void LinkedList<T>::insert(T value) {
     if (this->node_ == nullptr) {
         this->node_ = make_shared<Node<T>>(value);
+        this->node_->setNext(make_shared<Node<T>>());
+        this->node_->next()->setPrev(this->node_);
     }
     else {
         node_ptr lastNode = this->findLast();
@@ -179,6 +189,16 @@ void LinkedList<T>::erase(size_t index) {
     --this->size_;
 }
 
+template<typename T>
+typename LinkedList<T>::Iterator LinkedList<T>::begin() {
+    return Iterator(this->node_);
+}
+
+template<typename T>
+typename LinkedList<T>::Iterator LinkedList<T>::end() {
+    return Iterator(this->findLast()->next());
+}
+
 /*
  ***************************************
  **** Overloaded Operators          ****
@@ -188,4 +208,53 @@ void LinkedList<T>::erase(size_t index) {
 template<typename T>
 typename LinkedList<T>::node_ptr LinkedList<T>::operator[](int index) {
     return this->findAt(index);
+}
+
+/*
+ ***************************************
+ **** Iterator                      ****
+ ***************************************
+ */
+
+template<typename T>
+LinkedList<T>::Iterator::Iterator() {}
+
+template<typename T>
+LinkedList<T>::Iterator::Iterator(node_ptr ptr) : _ptr(ptr) {}
+
+template<typename T>
+LinkedList<T>::Iterator::Iterator(node_ptr&& ptr) : _ptr(ptr) {}
+
+template<typename T>
+typename LinkedList<T>::Iterator& LinkedList<T>::Iterator::operator++() {
+    this->_ptr = this->_ptr->next();
+    return *this;
+}
+
+template<typename T>
+typename LinkedList<T>::Iterator& LinkedList<T>::Iterator::operator++(int) {
+    this->_ptr = this->_ptr->next();
+    return *this;
+}
+
+template<typename T>
+typename LinkedList<T>::Iterator& LinkedList<T>::Iterator::operator--() {
+    this->_ptr = this->_ptr->prev();
+    return *this;
+}
+
+template<typename T>
+typename LinkedList<T>::Iterator& LinkedList<T>::Iterator::operator--(int) {
+    this->_ptr = this->_ptr->prev();
+    return *this;
+}
+
+template<typename T>
+typename LinkedList<T>::node_ptr& LinkedList<T>::Iterator::operator*() {
+    return this->_ptr;
+}
+
+template<typename T>
+typename LinkedList<T>::node_ptr& LinkedList<T>::Iterator::operator->() {
+    return this->_ptr;
 }
